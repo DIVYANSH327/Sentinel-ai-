@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "backendUrl": "https://ais-dev-d5aharxmnaofqoprejyuzv-792282820119.asia-southeast1.run.app",
+  "allowedTargets": [
+    "10.24.0.0/24",
+    "192.168.56.0/24",
+    "lab-node-01.sentinel.internal",
+    "lab-node-02.sentinel.internal"
+  ],
+  "setupPackageVersion": "1.4.2",
+  "enrollments": [
+    {
+      "id": "enr-4f743d6b",
+      "label": "kali-live-usb-primary",
+      "codeHash": "7471cfb8a7d4e1560310801c4b3b9c8752cad0cf4bbe468987d03e90a5a8d661",
+      "codeHint": "SEN-ENROLL-349F5E-••••-DD",
+      "createdAt": "2026-10-24T17:46:52.939Z",
+      "expiresAt": "2026-10-24T18:01:52.939Z",
+      "usedAt": "2026-10-24T17:46:56.239Z",
+      "usedByAgentId": "agt-9d0b996c",
+      "revoked": false
+    }
+  ],
+  "agents": [
+    {
+      "id": "agt-9d0b996c",
+      "hostname": "kali-live-usb",
+      "linuxUser": "kali",
+      "uid": 1000,
+      "agentVersion": "1.4.2",
+      "configFilePath": "/home/kali/.config/sentinel-agent/agent.conf",
+      "configFileMode": "0600",
+      "systemdUnitName": "sentinel-agent.service",
+      "systemdUnitStatus": "active (running)",
+      "systemdEnabled": true,
+      "tokenHash": "5d9483f5925b61c0c3a1f354f8ea20a5c2418877de5a3cf2b5d880716c9b9477",
+      "tokenFingerprint": "stnl_live_••••fee3f9",
+      "tokenIssuedAt": "2026-10-24T17:46:56.239Z",
+      "tokenExpiresAt": "2026-10-31T17:46:56.239Z",
+      "tokenRotationCount": 0,
+      "revoked": false,
+      "revokedReason": null,
+      "enrolledAt": "2026-10-24T17:46:56.239Z",
+      "lastHeartbeatAt": "2026-10-24T17:46:56.239Z",
+      "lastVerifiedIp": "127.0.0.1",
+      "allowedTargets": [
+        "10.24.0.0/24",
+        "192.168.56.0/24",
+        "lab-node-01.sentinel.internal",
+        "lab-node-02.sentinel.internal"
+      ]
+    }
+  ],
+  "sanitizedLogs": [
+    {
+      "id": "log-ddf6b659",
+      "timestamp": "2026-10-24T17:46:56.239Z",
+      "level": "INFO",
+      "source": "enrollment-authority",
+      "message": "Enrolled Kali agent kali@kali-live-usb (UID 1000) using single-use code SEN-ENROLL-[REDACTED]••••-DD. Credential stored in /home/kali/.config/sentinel-agent/agent.conf (mode 0600)."
+    },
+    {
+      "id": "log-init-1",
+      "timestamp": "2026-10-24T17:46:19.735Z",
+      "level": "INFO",
+      "source": "enrollment-authority",
+      "message": "Sentinel USB Connect control plane initialized. Waiting for operator configuration and single-use Kali agent enrollment."
+    }
+  ],
+  "auditEvents": [
+    {
+      "id": "aud-df8cb596",
+      "timestamp": "2026-10-24T17:51:01.645Z",
+      "actor": "operator",
+      "eventType": "SCAN_JOB_PENDING_APPROVAL",
+      "severity": "warning",
+      "summary": "Queued \"Intrusive CVE Proof-of-Concept Check\" for 10.24.0.15 in pending_human_approval state.",
+      "metadata": {
+        "jobId": "job-4ddc96a7",
+        "operationId": "intrusive_vuln_verification",
+        "target": "10.24.0.15"
+      }
+    },
+    {
+      "id": "aud-f9877df0",
+      "timestamp": "2026-10-24T17:51:01.260Z",
+      "actor": "operator",
+      "eventType": "SCAN_JOB_QUEUED",
+      "severity": "info",
+      "summary": "Queued predefined operation \"Baseline Service Port Inventory\" for validated target 10.24.0.15.",
+      "metadata": {
+        "jobId": "job-95b5e679",
+        "operationId": "passive_port_inventory",
+        "target": "10.24.0.15"
+      }
+    },
+    {
+      "id": "aud-15ccad2c",
+      "timestamp": "2026-10-24T17:49:00.685Z",
+      "actor": "policy-guard",
+      "eventType": "SCAN_JOB_REJECTED",
+      "severity": "critical",
+      "summary": "Blocked out-of-scope target \"10.24.0.0.15\" for operation passive_port_inventory.",
+      "metadata": {
+        "reason": "TARGET_OUT_OF_SCOPE",
+        "target": "10.24.0.0.15",
+        "operationId": "passive_port_inventory"
+      }
+    },
+    {
+      "id": "aud-5615c531",
+      "timestamp": "2026-10-24T17:46:56.239Z",
+      "actor": "kali@kali-live-usb",
+      "eventType": "AGENT_ENROLLED",
+      "severity": "info",
+      "summary": "Kali agent enrolled as non-root user kali (UID 1000) with credential stnl_live_••••fee3f9.",
+      "metadata": {
+        "agentId": "agt-9d0b996c",
+        "uid": 1000,
+        "configFileMode": "0600",
+        "tokenFingerprint": "stnl_live_••••fee3f9"
+      }
+    },
+    {
+      "id": "aud-deb76720",
+      "timestamp": "2026-10-24T17:46:52.939Z",
+      "actor": "operator",
+      "eventType": "ENROLLMENT_CODE_ISSUED",
+      "severity": "info",
+      "summary": "Issued short-lived single-use enrollment code (SEN-ENROLL-349F5E-••••-DD) valid for 15m.",
+      "metadata": {
+        "enrollmentId": "enr-4f743d6b",
+        "label": "kali-live-usb-primary",
+        "ttlMinutes": 15
+      }
+    },
+    {
+      "id": "aud-init-1",
+      "timestamp": "2026-10-24T17:46:19.735Z",
+      "actor": "system",
+      "eventType": "BACKEND_URL_UPDATED",
+      "severity": "info",
+      "summary": "Control plane store initialized with zero active agent credentials.",
+      "metadata": {
+        "packageVersion": "1.4.2"
+      }
+    }
+  ],
+  "scanJobs": [
+    {
+      "id": "job-4ddc96a7",
+      "agentId": "agt-9d0b996c",
+      "operationId": "intrusive_vuln_verification",
+      "operationName": "Intrusive CVE Proof-of-Concept Check",
+      "target": "10.24.0.15",
+      "requiresHumanApproval": true,
+      "status": "pending_human_approval",
+      "createdAt": "2026-10-24T17:51:01.645Z",
+      "approvedBy": null,
+      "approverNote": null,
+      "approvedAt": null,
+      "rejectionReason": null
+    },
+    {
+      "id": "job-95b5e679",
+      "agentId": "agt-9d0b996c",
+      "operationId": "passive_port_inventory",
+      "operationName": "Baseline Service Port Inventory",
+      "target": "10.24.0.15",
+      "requiresHumanApproval": false,
+      "status": "queued",
+      "createdAt": "2026-10-24T17:51:01.260Z",
+      "approvedBy": null,
+      "approverNote": null,
+      "approvedAt": null,
+      "rejectionReason": null
+    }
+  ],
+  "wizardChecklist": {
+    "step1WindowsUsbPrepared": false,
+    "step2PackageDownloaded": false,
+    "step3KaliUsbMounted": false,
+    "step4NonRootInstalled": true,
+    "step5BackendConfigured": true,
+    "step6SystemdVerified": false
+  }
+}

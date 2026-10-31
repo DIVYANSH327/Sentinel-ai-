@@ -1,0 +1,6 @@
+{
+  "name": "Sentinel USB Connect",
+  "description": "Securely prepare a 16 GB USB setup drive on Windows, transfer verified setup artifacts to Kali Linux Live USB, enroll a non-root Sentinel research agent, and manage user-level systemd persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
